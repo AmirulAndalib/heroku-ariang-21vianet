@@ -51,7 +51,7 @@ FAQ: [Do I have to use Docker?](#do-i-have-to-use-docker)
 1. Run `heroku login` to login, then `heroku container:login` too.
 2. Clone this repository and enter it. (PS: Please run `git config --global core.autocrlf false` before `git clone` if you are using Windows.)
 3. Run `heroku apps:create APP_NAME` to create it.
-4. Run `heroku config:set -a APP_NAME ARIA2C_SECRET=ARIA2_SECRET` and `heroku config:set -a APP_NAME HEROKU_APP_NAME=APP_NAME`.
+4. Run `heroku config:set -a APP_NAME ARIA2C_SECRET=ARIA2_SECRET` and `heroku config:set -a APP_NAME WEB_URL=APP_NAME`.
 5. Run `heroku container:push web -a APP_NAME` and `heroku container:release web -a APP_NAME`.
 6. Run `heroku open -a APP_NAME` and it will open your browser to deployed instance. 
 

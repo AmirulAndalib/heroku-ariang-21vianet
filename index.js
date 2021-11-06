@@ -36,14 +36,14 @@ app.use('/ariang', express.static(__dirname + '/ariang'))
 app.use('/', express.static(__dirname + '/index'))
 server.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`))
 
-if (process.env.HEROKU_APP_NAME) {
+if (process.env.WEB_URL) {
 	const readNumUpload = () =>
 		new Promise((res, rej) =>
 			fs.readFile('numUpload', 'utf-8', (err, text) =>
 				err ? rej(err) : res(text)
 			)
 		)
-	const APP_URL = `https://${process.env.HEROKU_APP_NAME}.herokuapp.com`
+	const APP_URL = `${process.env.WEB_URL}`
 	const preventIdling = () => {
 		request.post(
 			'http://localhost:6800/jsonrpc',
